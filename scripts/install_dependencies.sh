@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install git
+yum install -y git
 
 # clone submodules
 git submodule init
