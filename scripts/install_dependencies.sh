@@ -1,12 +1,14 @@
 #!/bin/bash
 
+BUNDLE_ROOT=/opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
+
 yum install -y git
 
 # clone submodules
-echo /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
-cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive
-git submodule init
-git submodule update
+cd /tmp
+git clone --recursive https://github.com/sogabe/WordPress.git
+cp -R /tmp/WordPress/bootstrap/* $BUNDLE_ROOT/
+rm -rf /tmp/WordPress
 
 yum groupinstall -y "Web Server" "MySQL Database" "PHP Support"
 yum install -y php-mysql
