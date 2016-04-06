@@ -3,7 +3,7 @@
 yum install -y git
 
 # clone submodules
-pwd
+cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID
 git submodule init
 git submodule update
 
