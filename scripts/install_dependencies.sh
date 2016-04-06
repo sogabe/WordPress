@@ -7,7 +7,7 @@ yum install -y git
 # clone submodules
 cd /tmp
 git clone --recursive https://github.com/sogabe/WordPress.git
-cp -R /tmp/WordPress/bootstrap/* $BUNDLE_ROOT/
+cp -R /tmp/WordPress/bootstrap/* $BUNDLE_ROOT/bootstrap/
 rm -rf /tmp/WordPress
 
 yum groupinstall -y "Web Server" "MySQL Database" "PHP Support"
