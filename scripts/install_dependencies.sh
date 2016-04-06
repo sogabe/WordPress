@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yum install git
+
 # clone submodules
 git submodule init
 git submodule update

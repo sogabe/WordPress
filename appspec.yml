@@ -3,8 +3,6 @@ os: linux
 files:
   - source: /
     destination: /var/www/html/WordPress
-  - source: bootstrap/
-    destination: /var/www/html/WordPress
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
